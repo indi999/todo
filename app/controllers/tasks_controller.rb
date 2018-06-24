@@ -1,6 +1,6 @@
 class TasksController < ApplicationController
   before_action :set_task, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, except: [:show, :index]
+  before_action :authenticate_user!
 
   # GET /tasks
   # GET /tasks.json
@@ -26,7 +26,7 @@ class TasksController < ApplicationController
   # POST /tasks.json
   def create
     @task = Task.new(task_params)
-    @task.user = current_user
+    @task.user = current_user unless current_user.admin
 
     respond_to do |format|
       if @task.save
@@ -71,6 +71,6 @@ class TasksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def task_params
-      params.require(:task).permit(:title, :desc, :done)
+      params.require(:task).permit(:title, :desc, :done, :user_id)
     end
 end

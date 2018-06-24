@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Tasks</h1>
+<h1>Tasks</h1><h4>user:<%= current_user.email %> </h4>
 
 <table>
   <thead>
@@ -16,15 +16,16 @@
   <tbody>
     <% @tasks.each do |task| %>
       <tr>
+      <% if task.user.email == current_user.email || current_user.admin%> 
         <td><%= task.title %></td>
         <td><%= task.desc %></td>
         <td><%= task.done %></td>
         <td><%= task.user.email %></td>
-  <% if current_user && current_user.admin %>      
+       
         <td><%= link_to 'Show', task %></td>
         <td><%= link_to 'Edit', edit_task_path(task) %></td>
         <td><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  <% end %>      
+      <% end %>      
       </tr>
     <% end %>
   </tbody>
@@ -33,3 +34,4 @@
 <br>
 
 <%= link_to 'New Task', new_task_path %>
+<%= link_to 'Home', root_path %>

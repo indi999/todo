@@ -25,6 +25,13 @@
     <%= f.label :done %>
     <%= f.check_box :done %>
   </div>
+  
+ <% if current_user.admin %> 
+    
+    <% @user = User.all %>
+    <%= f.select( :user_id, options_from_collection_for_select(@user, 'id', 'email') ) %>
+  
+ <% end %>
 
   <div class="actions">
     <%= f.submit %>
