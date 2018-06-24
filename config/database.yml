@@ -1,23 +1,16 @@
-development:
-  adapter: postgresql
-  encoding: unicode
-  database: todo_development
-  pool: 5
-  username: postgres
-  password: ********
 
-test:
+development: &defaults
   adapter: postgresql
-  encoding: unicode
-  database: todo_test
-  pool: 5
+  database: todo_development
   username: postgres
-  password: ********
+  password: "indijanac999"
+  encoding: unicode
+  pool: 5
+test:
+  <<: *defaults
+  database: todo_test
 
 production:
-  adapter: postgresql
-  encoding: unicode
-  database: todo_test
-  pool: 5
-  username: postgres
-  password: ********
+  <<: *defaults
+  database: todo_production
+
