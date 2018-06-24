@@ -1,10 +1,11 @@
 <h1>Pages#home</h1>
 <% if current_user %>
-    <%= link_to 'TASKS', tasks_path %>
-    <%= link_to 'SignOut',  destroy_user_session_path, method: :delete %>
+    <%= link_to ' << TASKS >> | ', tasks_path %>
+    <%= link_to ' Edit your profile | ',  edit_user_registration_path %>
+    <%= link_to ' SignOut | ',  destroy_user_session_path, method: :delete %>
 <% else %>
-    <%= link_to 'SignUp', new_user_registration_path %>
-    <%= link_to 'LogIn',  new_user_session_path %>   
+    <%= link_to 'SignUp |', new_user_registration_path %>
+    <%= link_to 'LogIn |',  new_user_session_path %>   
 <% end %>
 
 <p>Find me in app/views/pages/home.html.erb</p>
