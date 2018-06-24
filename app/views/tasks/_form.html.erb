@@ -28,8 +28,8 @@
   
  <% if current_user.admin %> 
     
-    <% @user = User.all %>
-    <%= f.select( :user_id, options_from_collection_for_select(@user, 'id', 'email') ) %>
+    <% @users = User.all %>
+    <%= f.select( :user_id, options_from_collection_for_select(@users, 'id', 'email', selected: task.user_id), {prompt: 'Select User'} ) %>
   
  <% end %>
 
