@@ -3,7 +3,7 @@ development: &defaults
   adapter: postgresql
   database: todo_development
   username: postgres
-  password: "indijanac999"
+  password: ""
   encoding: unicode
   pool: 5
 test:
