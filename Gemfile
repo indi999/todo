@@ -9,6 +9,7 @@ end
 gem 'devise'
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'rails_12factor', group: :production
 # gem 'fog'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
