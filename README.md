@@ -6,19 +6,14 @@ application up and running.
 Things you may want to cover:
 
 * Ruby version
+ruby 2.2.6p396
+rails 5.0.7
 
-* System dependencies
-
-* Configuration
+* GEMS ----------
+devise
+carrierwave
+mini_magick
+rails_12factor
 
 * Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+postgreSQL v.10
