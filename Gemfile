@@ -7,6 +7,8 @@ end
 
 # GEMS ----------
 gem 'devise'
+gem 'bootstrap', '~> 4.1.1'
+gem 'jquery-rails'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'rails_12factor', group: :productioncd

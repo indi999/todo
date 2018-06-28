@@ -1,16 +1,21 @@
-
-development: &defaults
+default: &default
   adapter: postgresql
-  database: todo_development
+  encoding: unicode
+  pool: 5  
+  template: template0
   username: postgres
   password: "indijanac999"
-  encoding: unicode
-  pool: 5
+  
+development:
+  <<: *default
+  database: todo_development
+
 test:
-  <<: *defaults
+  <<: *default
   database: todo_test
 
 production:
-  <<: *defaults
+  <<: *default
   database: todo_production
-
+  username: postgres
+  password: <%= ENV['indijanac999'] %>
