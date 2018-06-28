@@ -1,15 +1,10 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Todo</title>
-    <%= csrf_meta_tags %>
+<%= render 'layouts/header' %>
+<!-- Navigation -->
+<%= render 'layouts/navigation' %>
+<%= render 'layouts/alerts' %>
+<div class="container">
+  
+  <%= yield %>
+</div>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
-
-  <body>
-    <%= render 'layouts/alerts' %>
-    <%= yield %>
-  </body>
-</html>
+<%= render 'layouts/footer' %>
