@@ -2,6 +2,8 @@
 <!-- Navigation -->
 <% if current_user %>
   <%= render 'layouts/navigation' %>
+<% else %>  
+  <%= render 'layouts/nav'%>
 <% end %>
 
 <%= render 'layouts/alerts' %>
