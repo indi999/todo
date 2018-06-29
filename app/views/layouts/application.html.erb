@@ -1,9 +1,11 @@
 <%= render 'layouts/header' %>
 <!-- Navigation -->
-<%= render 'layouts/navigation' %>
+<% if current_user %>
+  <%= render 'layouts/navigation' %>
+<% end %>
+
 <%= render 'layouts/alerts' %>
 <div class="container">
-  
   <%= yield %>
 </div>
 
