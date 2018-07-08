@@ -4,7 +4,7 @@
 
   <h1 class="display-2" >Tasks</h1><br>
   <div class="alert alert-secondary" role="alert">
-    <h4>Current user: <span class="badge badge-secondary"><%= current_user.email %></span></h4>
+    <h3>In development</h3>
   </div>
   <div>
     <%= link_to '| New Task |', new_task_path %>
@@ -24,13 +24,41 @@
     <tbody>
       <% @tasks.each do |task| %>
         <tr>
-        <% if task.user.email == current_user.email || current_user.admin && task.user.done == false %> 
+        <% if task.done == false && task.user.email == current_user.email || current_user.admin  %> 
           <td><%= task.title %></td>
+          <td><%= check_box_tag 'active', task.done, task.done %></td>
+          <td><%= task.user.email %></td>       
+          <td><%= link_to ' Show ', task , class: 'btn btn-outline-light' %></td>
+          <td><%= link_to ' Edit ', edit_task_path(task) , class: 'btn btn-outline-light' %></td>
+          <td><%= link_to ' Destroy ', task, method: :delete, data: { confirm: 'Are you sure?' } , class: 'btn btn-outline-danger' %></td>
+        <% end %>      
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+ 
+  <div class="alert alert-success" role="alert">
+    <h3>Complete </h3>
+  </div>
+  
+  <br>
+  <table class="table table-striped table-dark">
+    <thead>
+      <tr>
+        <th> Title </th>
+        <th> Done </th>
+        <th> User </th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
 
-          <td><%= check_box_tag 'active', task.done, false %></td>
-
-          <td><%= task.user.email %></td>
-        
+    <tbody>
+      <% @tasks.each do |task| %>
+        <tr>
+        <% if task.done == true && task.user.email == current_user.email || current_user.admin  %> 
+          <td><%= task.title %></td>
+          <td><%= check_box_tag 'active', task.done, task.done %></td>
+          <td><%= task.user.email %></td>       
           <td><%= link_to ' Show ', task , class: 'btn btn-outline-light' %></td>
           <td><%= link_to ' Edit ', edit_task_path(task) , class: 'btn btn-outline-light' %></td>
           <td><%= link_to ' Destroy ', task, method: :delete, data: { confirm: 'Are you sure?' } , class: 'btn btn-outline-danger' %></td>
