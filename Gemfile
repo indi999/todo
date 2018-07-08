@@ -11,7 +11,7 @@ gem 'bootstrap', '~> 4.1.1'
 gem 'jquery-rails'
 gem 'carrierwave'
 gem 'mini_magick'
-gem 'rails_12factor', group: :productioncd
+gem 'rails_12factor', group: :production
 # gem 'fog'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

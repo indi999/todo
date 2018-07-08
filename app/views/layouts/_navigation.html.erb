@@ -1,34 +1,43 @@
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="#">Task Menager</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#"><span><%= image_tag("https://i.imgur.com/TpWQH9c.png", hight: '24', alt: "Project_menager_logo") %></span> Project<span class="text-danger">USER</span>Menager</a>
+    </div>
+    <div>   
 
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
-        <ul class="navbar-nav mr-auto">
-
-        <% if current_user %>
-            <li class="nav-item active">
-                <button type="button" class="btn btn-outline-secondary"> Edit profile</button>
-            </li>
-            <li class="nav-item">
-                <button type="button" class="btn btn-outline-secondary" > SignOut</button>
-            </li>
-            <%= link_to ' Edit profile | ',  edit_user_registration_path %>
-            <%= link_to ' SignOut | ',  destroy_user_session_path, method: :delete %>
-        <% else %>
-            <li class="nav-item active">
-                <button type="button" class="btn btn-outline-secondary">LogIn</button>
-            </li>
-            <li class="nav-item">
-                <button type="button" class="btn btn-outline-secondary" >SignUp</button>
-            </li>
-            <%= link_to 'SignUp |', new_user_registration_path %>
-            <%= link_to 'LogIn |',  new_user_session_path %>   
-        <% end %>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#"><i class="fa fa-comments" aria-hidden="true"></i> Forums</a></li>
+          <li><a href="#"><i class="fa fa-shopping-bag" aria-hidden="true"></i> Shop</a></li>
+          <li><a href="#"><i class="fa fa-plug" aria-hidden="true"></i> Extensions</a></li>
           
+        <% if current_user %>
+           
+            <li><li><button type="button" class="btn btn-danger btn-margin-right navbar-btn">Upgrade</button></li></li>
+            <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= current_user.email %> <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+                <li><a href="#"><i class="fa fa-code" aria-hidden="true"></i> Dev Tools</a></li>
+                <li><a href="#"><i class="fa fa-money" aria-hidden="true"></i> Shop Tools</a></li>
+                <li><a href="#"><i class="fa fa-cog" aria-hidden="true"></i> Account Settings</a></li>
+                <li><a href="#"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a></li>
+            </ul>  
+            <li>
+                <%= link_to ' Edit profile | ',  edit_user_registration_path %>
+                <%= link_to ' SignOut | ',  destroy_user_session_path, method: :delete %>
+              
+            </li>
+        <% else %>
+            <li>
+                <li><button type="button" class="btn btn-danger btn-margin-right navbar-btn"><i class="fa fa-sign-in" aria-hidden="true"></i> Sign in</button></li>
+            </li>
+            <li><button type="button" class="btn btn-success btn-margin-right navbar-btn">Register</button></li>
+        <% end %>
+
         </ul>
 
-      </div>
-    </nav>
+      </li>
+      </ul>
+
+    </div>
+  </div>
+</nav>

@@ -15,3 +15,25 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+
+/*
+LIGHT GREY
+#ecf0f1
+GREY
+#bdc3c7
+*/
+
+/*
+DARK BLUE
+#2c3e50
+BLUE
+#34495e
+*/
+
+/*
+DARK RED
+#c0392b
+RED
+#e74c3c
+*/
