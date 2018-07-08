@@ -4,7 +4,7 @@ default: &default
   pool: 5  
   template: template0
   username: postgres
-  password: "indijanac999"
+  password: ""
   
 development:
   <<: *default
@@ -18,4 +18,4 @@ production:
   <<: *default
   database: todo_production
   username: postgres
-  password: <%= ENV['indijanac999'] %>
+  password: <%= ENV[''] %>
