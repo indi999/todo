@@ -1,7 +1,7 @@
 # README file
 
 * Ruby version:
-    ruby 2.2.6p396,
+    ruby 2.5.0,
     rails 5.0.7.
 
 * GEMS: 
